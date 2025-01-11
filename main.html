@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=2.0">
+  <title>Solar System</title>
+</head>
+
+<style>
+  /* Make sure the page uses the full height of the screen */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling */
+  }
+
+  /* Ensure the main content section fits the screen */
+  .u-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  /* Adjust the header and footer to fit neatly */
+  header, footer {
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+
+  /* Set the section to take the remaining space */
+  .u-section-1 {
+    flex-grow: 1; /* Allow the section to take the remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Ensure that the explore button stays in the center */
+  .u-btn-1 {
+    margin-top: 20px; /* Optional, adjust the spacing */
+  }
+</style>
+
+
+<body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/Tween.min.js"></script>
+  <script type = 'module' src="main.js"></script>
+</body>
+
+</html>

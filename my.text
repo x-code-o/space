@@ -1,0 +1,21 @@
+const containerRadius = 500;
+const sphereSegments = 64;
+const sphereGeometry = new THREE.SphereGeometry(containerRadius, sphereSegments, sphereSegments);
+const envMapLoader = new THREE.TextureLoader();
+const pmremGenerator = new THREE.PMREMGenerator(renderer);
+const envMapPath = 'space-galaxy-background.jpg';// Load the environment map
+envMapLoader.load(envMapPath, (texture) => {
+const envMap = pmremGenerator.fromEquirectangular(texture).texture;// Generate the PMREM
+
+  // Create the material with environment mapping
+  const sphereMaterial = new THREE.MeshStandardMaterial({
+    envMap: envMap,
+    side: THREE.BackSide,
+    metalness: 1, // Adjust metalness based on the environment
+    roughness: 0.3, // Adjust roughness based on the environment
+  });
+
+  // Create the container mesh
+  const container = new THREE.Mesh(sphereGeometry, sphereMaterial);
+  scene.add(container);
+});
